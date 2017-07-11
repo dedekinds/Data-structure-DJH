@@ -56,7 +56,7 @@ class BinaryTree:
 
     def insertLeft(self,newNode):
         if self.leftChild == None:
-            self.leftChild = BinaryTree(newNode)#子树怎么插入？
+            self.leftChild = BinaryTree(newNode)
         else:
             t = BinaryTree(newNode)
             t.leftChild = self.leftChild
@@ -70,16 +70,16 @@ class BinaryTree:
             t.rightChild = self.rightChild
             self.rightChild = t
 
-    def getRightChild(self):
+    def getRightChild(self):#获取右孩子
         return self.rightChild
 
-    def getLeftChild(self):
+    def getLeftChild(self):#获取左孩子
         return self.leftChild
 
-    def setRootVal(self,obj):
+    def setRootVal(self,obj):#重置根的值
         self.key = obj
 
-    def getRootVal(self):
+    def getRootVal(self):#获取根的值
         return self.key
 
 
@@ -88,10 +88,12 @@ print(r.getRootVal())
 print(r.getLeftChild())
 r.insertLeft('b')
 print(r.getLeftChild())
-print(r.getLeftChild().getRootVal())
+print(r.getLeftChild().getRootVal())#获取r左孩子的根值
 r.insertRight('c')
 print(r.getRightChild())
 print(r.getRightChild().getRootVal())
 r.getRightChild().setRootVal('hello')
 print(r.getRightChild().getRootVal())
+r.getLeftChild().insertLeft('d')#子树插入
+print(r.getLeftChild().getLeftChild().getRootVal())
 ___________________________________
