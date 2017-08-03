@@ -50,9 +50,9 @@ class Graph(object):
         self.vertList[f].addNeighbor(self.vertList[t], cost)
 
     def getVertices(self):
-        return self.vertList.keys()#print(g.getVertices())求顶点
+        return self.vertList.keys()#print(g.getVertices())返回所有顶点的名称
 
-    def __iter__(self):
+    def __iter__(self):#遍历特定图中的所有顶点对象
         return iter(self.vertList.values())
 
 
@@ -74,3 +74,14 @@ g.addEdge(5,2,1)
 for v in g:
     for w in v.getConnections():
         print("( %s , %s )" % (v.getId(), w.getId()))
+
+
+
+for x in g:#def __iter__(self):
+    print(x)
+0 connectedTo: [1, 5]
+1 connectedTo: [2]
+2 connectedTo: [3]
+3 connectedTo: [4, 5]
+4 connectedTo: [0]
+5 connectedTo: [4, 2]
