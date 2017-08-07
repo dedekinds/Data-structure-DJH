@@ -61,7 +61,7 @@ class Graph(object):
         if root:
             dfs(root)
 
-        for node in self.nodes():
+        for node in self.nodes():#实际上图不一定是连通的，所以，必须再遍历所有的顶点用BFS（这样才是完整的）
             if not node in self.visited:
                 dfs(node)
 
